@@ -1,8 +1,8 @@
 #!/bin/bash
 
-envtpl $COLLECTD_CONF_PATH/collectd.conf.tpl
+envtpl $COLLECTD_CONF_PATH/collectd.conf.erb
 mkdir $COLLECTD_INCLUDES_PATH
 git clone $GIT_URL $PROJECT_PATH
 cd $PROJECT_PATH
 bundle install
-rackup -o 0.0.0.0
+$START_CMD
