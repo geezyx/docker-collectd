@@ -1,7 +1,6 @@
 #!/bin/bash
 
-envtpl $COLLECTD_CONF_PATH/collectd.conf.erb
-mkdir $COLLECTD_INCLUDES_PATH
+envtemplate.rb $COLLECTD_CONF_PATH/collectd.conf.erb $COLLECTD_CONF_PATH/collectd.conf
 git clone $GIT_URL $PROJECT_PATH
 cd $PROJECT_PATH
 bundle install
