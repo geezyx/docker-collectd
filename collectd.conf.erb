@@ -1,0 +1,33 @@
+FQDNLookup true
+Interval 30
+LoadPlugin syslog
+LoadPlugin snmp
+LoadPlugin write_graphite
+
+TypesDB "/usr/share/collectd/types.db"
+TypesDB "<%= ENV['COLLECTD_CONF_PATH'] %>/types.db"
+
+<Plugin syslog>
+	LogLevel info
+</Plugin>
+
+<Plugin "write_graphite">
+  <Node "hostedgraphite">
+    Host "<%= ENV['GRAPHITE_HOST'] %>"
+    Port "<%= ENV['GRAPHITE_PORT'] %>"
+    Protocol "tcp"
+    LogSendErrors true
+    Prefix "<%= ENV['GRAPHITE_PREFIX'] %>"
+    StoreRates true
+    AlwaysAppendDS false
+    EscapeCharacter "_"
+  </Node>
+</Plugin>
+
+<Include "<%= ENV['COLLECTD_CONF_PATH'] %>">
+  snmp.conf
+</Include>
+
+<Include "<%= ENV['COLLECTD_INCLUDES_PATH'] %>">
+	Filter "*.conf"
+</Include>
