@@ -1,7 +1,7 @@
 collectd
 =======================
 
-Custom collectd setup, for use with additional configuration service for elastic pollers.
+Custom collectd setup, for use with additional configuration service for elastic pollers.  All of the environment variables below are required!
 
 Environment variables
 ---------------------
@@ -10,6 +10,8 @@ Environment variables
   - Git URL for cloning
 * `PROJECT_PATH`
   - Project path root (e.g. /var/myapp)
+* `START_CMD`
+  - Command to initialize service
 * `COLLECTD_INCLUDES_PATH`
   - Includes path for additional collectd files (populated by separate controller)
 * `GRAPHITE_HOST`
