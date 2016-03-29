@@ -12,11 +12,3 @@ Environment variables
   - Project path root (e.g. /var/myapp)
 * `START_CMD`
   - Command to initialize service
-* `COLLECTD_INCLUDES_PATH`
-  - Includes path for additional collectd files (populated by separate controller)
-* `GRAPHITE_HOST`
-  - Graphite IP or hostname
-* `GRAPHITE_PORT`
-  - Graphite port
-* `GRAPHITE_PREFIX`
-  - Graphite prefix
