@@ -3,7 +3,7 @@ FROM geezyx/ruby-nodejs
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update
-RUN apt-get -y install collectd
+RUN apt-get -y install collectd snmp
 
 ADD mibs.tar.gz /usr/share/snmp/
 
